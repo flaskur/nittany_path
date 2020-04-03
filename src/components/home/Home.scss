@@ -1,0 +1,55 @@
+.home {
+	display: flex;
+	flex-direction: column;
+
+	& .home__header {
+		background-color: black;
+		height: 350px;
+		padding: 50px;
+		color: white;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& .home__header--title {
+			font-size: 36px;
+			font-weight: 900;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+				sans-serif;
+			margin-bottom: 20px;
+		}
+		& .home__header--text {
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+		& .home__header--link {
+			border: 1px solid black;
+			color: white;
+			background-color: #3ecf8e;
+			border-radius: 10px;
+			text-decoration: none;
+
+			font-size: 20px;
+			width: 200px;
+			padding: 10px 0;
+
+			&:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+
+	& .home__main {
+		background-color: palevioletred;
+		height: 400px;
+	}
+
+	& .home__footer {
+		background-color: black;
+		height: 200px;
+	}
+}
