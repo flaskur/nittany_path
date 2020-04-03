@@ -21,6 +21,10 @@ const Login = function() {
 
 	return (
 		<div className="login">
+			<p>Dummy Login</p>
+			<p>email: ae4536@nittany.edu</p>
+			<p>password: mxdgxmjn</p>
+
 			<p className="login__title">Nittany Path</p>
 
 			<div className="login__wrapper">
