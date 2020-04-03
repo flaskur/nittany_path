@@ -18,9 +18,13 @@ const Home = function() {
 				</Link>
 			</div>
 
-			<div className="home__main" />
+			<div className="home__main">
+				<p>main</p>
+			</div>
 
-			<div className="home__footer" />
+			<div className="home__footer">
+				<p>footer</p>
+			</div>
 		</div>
 	);
 };

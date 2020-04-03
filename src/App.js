@@ -7,6 +7,7 @@ import Courses from './components/courses/Courses';
 import Forum from './components/forum/Forum';
 import Grades from './components/grades/Grades';
 import Home from './components/home/Home';
+import Login from './components/login/Login';
 import Navbar from './components/navbar/Navbar';
 import Profile from './components/profile/Profile';
 
@@ -17,6 +18,8 @@ const App = function() {
 
 			<Switch>
 				<Route path="/" exact component={Home} />
+
+				<Route path="/login" exact component={Login} />
 
 				<Route path="/profile" exact component={Profile} />
 

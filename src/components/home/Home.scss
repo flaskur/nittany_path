@@ -3,22 +3,21 @@
 	flex-direction: column;
 
 	& .home__header {
-		background-color: black;
-		height: 350px;
+		height: 400px;
 		padding: 50px;
-		color: white;
+		color: black;
 
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: space-around;
 		align-items: center;
 
 		& .home__header--title {
 			font-size: 36px;
-			font-weight: 900;
+			font-weight: 700;
 			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
 				sans-serif;
-			margin-bottom: 20px;
+			margin-bottom: 40px;
 		}
 		& .home__header--text {
 			font-size: 20px;
@@ -26,15 +25,13 @@
 			margin-bottom: 20px;
 		}
 		& .home__header--link {
-			border: 1px solid black;
+			padding: 10px;
+			background-color: lightgreen;
+			border: none;
+			border-radius: 5px;
 			color: white;
-			background-color: #3ecf8e;
-			border-radius: 10px;
+			font-size: 22px;
 			text-decoration: none;
-
-			font-size: 20px;
-			width: 200px;
-			padding: 10px 0;
 
 			&:hover {
 				text-decoration: underline;
