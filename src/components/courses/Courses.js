@@ -4,7 +4,7 @@ import './Courses.scss';
 import CourseCard from '../coursecard/CourseCard';
 
 // We should do a fetch request to the backend and receive the list of courses for the particular user. We expect a user to be passed, identified by email probably.
-const Courses = function() {
+const Courses = function({ email }) {
 	// const [ courses, setCourses ] = React.useState([]);
 
 	// React.useEffect(async () => {
@@ -32,6 +32,9 @@ const Courses = function() {
 					<CourseCard somepropshere/>
 				);
 			})} */}
+
+			{/* This only makes sense to have if already authenticated. */}
+			<h2>{email}</h2>
 		</div>
 	);
 };

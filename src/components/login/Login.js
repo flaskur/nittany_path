@@ -1,13 +1,46 @@
 import React from 'react';
 import './Login.scss';
 
-const Login = function() {
+const Login = function({ setEmail, setIsAuth }) {
 	const [ emailInput, setEmailInput ] = React.useState('');
 	const [ passwordInput, setPasswordInput ] = React.useState('');
+	const [ errorMessage, setErrorMessage ] = React.useState('');
 
-	const handleFormSubmit = function(event) {
+	const handleFormSubmit = async function(event) {
 		event.preventDefault();
 		console.log('form submits');
+
+		try {
+			// login doesn't need token auth.
+			const response = await fetch('http://localhost:3001/login', {
+				method: 'POST',
+				headers: {
+					'content-type': 'application/json'
+				},
+				body: JSON.stringify({
+					email: emailInput,
+					password: passwordInput
+				})
+			});
+
+			// we get back the email and token to set as localstorage.
+			const data = await response.json();
+
+			if (data.message) {
+				console.log(data.message);
+				setErrorMessage(data.message);
+				return;
+			}
+
+			localStorage.setItem('email', data.email);
+			localStorage.setItem('token', data.token);
+			// fix the state in the parent app component
+			setEmail(localStorage.getItem('email'));
+			setIsAuth(true);
+		} catch (error) {
+			console.log(error);
+		}
+
 		setEmailInput('');
 		setPasswordInput('');
 	};
@@ -24,6 +57,8 @@ const Login = function() {
 			<p>Dummy Login</p>
 			<p>email: ae4536@nittany.edu</p>
 			<p>password: mxdgxmjn</p>
+
+			<h2>{errorMessage}</h2>
 
 			<p className="login__title">Nittany Path</p>
 
