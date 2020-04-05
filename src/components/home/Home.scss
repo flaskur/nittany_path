@@ -14,15 +14,21 @@
 
 		& .home__header--title {
 			font-size: 36px;
-			font-weight: 700;
-			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
-				sans-serif;
 			margin-bottom: 40px;
+			color: white;
+			background-color: black;
+			border-radius: 10px;
+			padding: 10px;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
 		}
 		& .home__header--text {
 			font-size: 20px;
 			font-weight: 700;
 			margin-bottom: 20px;
+			background-color: palegoldenrod;
+			padding: 10px;
+			border-radius: 10px;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
 		}
 		& .home__header--link {
 			padding: 10px;
@@ -32,6 +38,7 @@
 			color: white;
 			font-size: 22px;
 			text-decoration: none;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
 
 			&:hover {
 				text-decoration: underline;

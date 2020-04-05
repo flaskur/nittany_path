@@ -29,16 +29,17 @@ const Courses = function({ email }) {
 
 	return (
 		<div className="courses">
-			<h2>Your Current Enrolled Courses!</h2>
+			<p className="courses__title">Your Current Enrolled Courses!</p>
 
-			{isStudent ? (
-				courses.map((course) => {
-					return <CourseCard key={course.course_id} course={course} />;
-				})
-			) : (
-				<h2>you are not a student</h2>
-			)}
-
+			<div className="courses__wrapper">
+				{isStudent ? (
+					courses.map((course) => {
+						return <CourseCard key={course.course_id} course={course} />;
+					})
+				) : (
+					<h2>you are not a student</h2>
+				)}
+			</div>
 			<h2>{email}</h2>
 		</div>
 	);

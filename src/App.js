@@ -3,6 +3,7 @@ import './App.scss';
 import { Switch, Route } from 'react-router-dom';
 
 import Assignments from './components/assignments/Assignments';
+import Course from './components/course/Course';
 import Courses from './components/courses/Courses';
 import Forum from './components/forum/Forum';
 import Grades from './components/grades/Grades';
@@ -37,6 +38,8 @@ const App = function() {
 				<Route path="/profile" exact component={Profile} />
 
 				<Route path="/courses" exact render={() => <Courses email={email} />} />
+
+				<Route path="/courses/:course" exact render={() => <Course />} />
 
 				<Route path="/courses/:course/forum" exact component={Forum} />
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import './CourseCard.scss';
+import { Link } from 'react-router-dom';
 
 const CourseCard = function({ course }) {
 	// destructure all the course information b/c it's an object
 	const {
-		student_email: studentEmail,
 		course_id: courseId,
 		course_name: courseName,
 		course_description: courseDescription,
@@ -16,14 +16,22 @@ const CourseCard = function({ course }) {
 
 	return (
 		<div className="coursecard">
-			<p>{studentEmail}</p>
-			<p>{courseId}</p>
-			<p>{courseName}</p>
-			<p>{courseDescription}</p>
-			<p>{lateDropDeadline}</p>
-			<p>{professorEmail}</p>
-			<p>{professorName}</p>
-			<p>{officeAddress}</p>
+			<div className="coursecard__left">
+				<p className="coursecard__title">{courseId}</p>
+				<p>{courseName}</p>
+				<p>{courseDescription}</p>
+			</div>
+			<div className="coursecard__middle">
+				<p>{lateDropDeadline}</p>
+				<p>{professorEmail}</p>
+				<p>{professorName}</p>
+				<p>{officeAddress}</p>
+			</div>
+			<div className="coursecard__right">
+				<Link className="coursecard__link" to={`/courses/${courseId}`}>
+					<p>Continue</p>
+				</Link>
+			</div>
 		</div>
 	);
 };
