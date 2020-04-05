@@ -6,6 +6,7 @@ const CourseCard = function({ course }) {
 	// destructure all the course information b/c it's an object
 	const {
 		course_id: courseId,
+		sec_no: sectionNumber,
 		course_name: courseName,
 		course_description: courseDescription,
 		late_drop_deadline: lateDropDeadline,
@@ -20,15 +21,16 @@ const CourseCard = function({ course }) {
 				<p className="coursecard__title">{courseId}</p>
 				<p>{courseName}</p>
 				<p>{courseDescription}</p>
+				<p>Section {sectionNumber}</p>
 			</div>
 			<div className="coursecard__middle">
-				<p>{lateDropDeadline}</p>
+				<p>Deadline {lateDropDeadline}</p>
 				<p>{professorEmail}</p>
 				<p>{professorName}</p>
 				<p>{officeAddress}</p>
 			</div>
 			<div className="coursecard__right">
-				<Link className="coursecard__link" to={`/courses/${courseId}`}>
+				<Link className="coursecard__link" to={`/courses/${courseId}/${sectionNumber}`}>
 					<p>Continue</p>
 				</Link>
 			</div>

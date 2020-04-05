@@ -16,7 +16,9 @@ const Courses = function({ email }) {
 				.then((response) => response.json())
 				.then((data) => {
 					setCourses(data);
-					setIsStudent(true);
+					if (data.length !== 0) {
+						setIsStudent(true);
+					}
 				})
 				.catch((error) => {
 					console.log(error);
@@ -37,7 +39,7 @@ const Courses = function({ email }) {
 						return <CourseCard key={course.course_id} course={course} />;
 					})
 				) : (
-					<h2>you are not a student</h2>
+					<p className="courses__error">You Do Not Have Enrolled Courses</p>
 				)}
 			</div>
 			<h2>{email}</h2>

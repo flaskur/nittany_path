@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.scss';
 import { Link } from 'react-router-dom';
 
-const Navbar = function({ setEmail, setIsAuth }) {
+const Navbar = function({ setEmail, isAuth, setIsAuth }) {
 	// This should remove all auth information from local storage, change state to not authorized, and redirect to the homepage. Do I need a fetch request?
 	const handleLogoutClick = function() {
 		console.log('logout was triggered');
@@ -28,13 +28,15 @@ const Navbar = function({ setEmail, setIsAuth }) {
 					Courses
 				</Link>
 
-				<Link to="/login" className="navbar__right--link">
-					Login
-				</Link>
-
-				<button className="navbar__right--button" onClick={handleLogoutClick}>
-					Logout
-				</button>
+				{isAuth ? (
+					<button className="navbar__right--button" onClick={handleLogoutClick}>
+						Logout
+					</button>
+				) : (
+					<Link to="/login" className="navbar__right--link">
+						Login
+					</Link>
+				)}
 
 				<Link to="/register" className="navbar__right--link">
 					Register

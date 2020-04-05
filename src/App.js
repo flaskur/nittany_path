@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 import Assignments from './components/assignments/Assignments';
 import Course from './components/course/Course';
@@ -28,7 +28,7 @@ const App = function() {
 
 	return (
 		<div className="app">
-			<Navbar setEmail={setEmail} setIsAuth={setIsAuth} />
+			<Navbar setEmail={setEmail} isAuth={isAuth} setIsAuth={setIsAuth} />
 
 			<Switch>
 				<Route path="/" exact component={Home} />
@@ -37,15 +37,19 @@ const App = function() {
 
 				<Route path="/profile" exact component={Profile} />
 
-				<Route path="/courses" exact render={() => <Courses email={email} />} />
+				<Route
+					path="/courses"
+					exact
+					render={() => (isAuth ? <Courses email={email} /> : <Redirect to="/" />)}
+				/>
 
-				<Route path="/courses/:course" exact render={() => <Course />} />
+				<Route path="/courses/:course/:section" exact render={() => <Course />} />
 
-				<Route path="/courses/:course/forum" exact component={Forum} />
+				<Route path="/courses/:course/:section/forum" exact component={Forum} />
 
-				<Route path="/courses/:course/assignments" exact component={Assignments} />
+				<Route path="/courses/:course/:section/assignments" exact component={Assignments} />
 
-				<Route path="/courses/:course/grades" exact component={Grades} />
+				<Route path="/courses/:course/:section/grades" exact component={Grades} />
 			</Switch>
 
 			{/* inline elements have no padding, etc. */}

@@ -1,10 +1,13 @@
 import React from 'react';
 import './Login.scss';
+import { useHistory } from 'react-router-dom';
 
 const Login = function({ setEmail, setIsAuth }) {
 	const [ emailInput, setEmailInput ] = React.useState('');
 	const [ passwordInput, setPasswordInput ] = React.useState('');
 	const [ errorMessage, setErrorMessage ] = React.useState('');
+
+	const history = useHistory();
 
 	const handleFormSubmit = async function(event) {
 		event.preventDefault();
@@ -44,6 +47,8 @@ const Login = function({ setEmail, setIsAuth }) {
 
 		setEmailInput('');
 		setPasswordInput('');
+
+		history.push('/');
 	};
 
 	const handleInputChange = function(event) {
@@ -71,7 +76,7 @@ const Login = function({ setEmail, setIsAuth }) {
 						<label className="login__email--label">Enter Email: </label>
 						<input
 							className="login__input"
-							type="text"
+							type="email"
 							name="email"
 							value={emailInput}
 							placeholder="email"
