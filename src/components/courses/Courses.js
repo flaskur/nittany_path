@@ -1,39 +1,44 @@
 import React from 'react';
 import './Courses.scss';
-
 import CourseCard from '../coursecard/CourseCard';
 
-// We should do a fetch request to the backend and receive the list of courses for the particular user. We expect a user to be passed, identified by email probably.
 const Courses = function({ email }) {
-	// const [ courses, setCourses ] = React.useState([]);
+	const [ courses, setCourses ] = React.useState([]);
+	const [ isStudent, setIsStudent ] = React.useState(false); // actually its either you have no courses or you're a professor.
 
-	// React.useEffect(async () => {
-	// 	console.log('course effects hook runs');
+	React.useEffect(
+		() => {
+			fetch('http://localhost:3001/courses', {
+				headers: {
+					authorization: localStorage.getItem('token')
+				}
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					setCourses(data);
+					setIsStudent(true);
+				})
+				.catch((error) => {
+					console.log(error);
+				});
 
-	// 	const response = await fetch(`http://localhost:3001/courses/${userEmail}`);
-
-	// 	if (response.status === 404) {
-	// 		// throw error
-	// 	}
-
-	// 	const coursesData = await response.json();
-	// console.log(courseData);
-
-	// 	// Does courses data come in as an object? If so you need to build courses arr. Also we should get prof info too right?
-	// 	setCourses([]);
-	// }, []);
+			// ISSUE WITH ASYNC INSIDE OF EFFECT HOOK. CONVERTING TO PROMISES FIXES THIS. NOT JWT ISSUE.
+		},
+		[ email ]
+	);
 
 	return (
 		<div className="courses">
 			<h2>Your Current Enrolled Courses!</h2>
 
-			{/* {courses.map(course => {
-				return (
-					<CourseCard somepropshere/>
-				);
-			})} */}
+			{isStudent ? (
+				courses.map((course) => {
+					return <CourseCard key={course.course_id} course={course} />;
+				})
+			) : (
+				<h2>you are not a student</h2>
+			)}
 
-			{/* This only makes sense to have if already authenticated. */}
 			<h2>{email}</h2>
 		</div>
 	);

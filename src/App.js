@@ -20,6 +20,7 @@ const App = function() {
 		if (!localToken) return;
 		const localEmail = localStorage.getItem('email');
 
+		// If we have a token, it implies that we are authenticated. You can technically gimmick this though.
 		setEmail(localEmail);
 		setIsAuth(true);
 	}, []);
