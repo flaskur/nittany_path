@@ -6,7 +6,10 @@ import Assignments from './components/assignments/Assignments';
 import Course from './components/course/Course';
 import Courses from './components/courses/Courses';
 import Faculty from './components/faculty/Faculty';
+import FacultyAssignments from './components/facultyassignments/FacultyAssignments';
 import FacultyCourse from './components/facultycourse/FacultyCourse';
+import FacultyGrades from './components/facultygrades/FacultyGrades';
+import FacultyForum from './components/facultyforum/FacultyForum';
 import Forum from './components/forum/Forum';
 import Grades from './components/grades/Grades';
 import Home from './components/home/Home';
@@ -48,22 +51,52 @@ const App = function() {
 					exact
 					render={() => (isAuth ? <Courses email={email} /> : <Redirect to="/" />)}
 				/>
+				<Route
+					path="/courses/:course/:section"
+					exact
+					render={() => (isAuth ? <Course /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/courses/:course/:section/forum"
+					exact
+					render={() => (isAuth ? <Forum /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/courses/:course/:section/assignments"
+					exact
+					render={() => (isAuth ? <Assignments /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/courses/:course/:section/grades"
+					exact
+					render={() => (isAuth ? <Grades /> : <Redirect to="/" />)}
+				/>
 
 				<Route
 					path="/faculty"
 					exact
 					render={() => (isAuth ? <Faculty email={email} /> : <Redirect to="/" />)}
 				/>
-
-				<Route path="/courses/:course/:section" exact render={() => <Course />} />
-
-				<Route path="/courses/:course/:section/forum" exact component={Forum} />
-
-				<Route path="/courses/:course/:section/assignments" exact component={Assignments} />
-
-				<Route path="/courses/:course/:section/grades" exact component={Grades} />
-
-				<Route path="/faculty/:course/:section" exact render={() => <FacultyCourse />} />
+				<Route
+					path="/faculty/:course/:section"
+					exact
+					render={() => (isAuth ? <FacultyCourse /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/faculty/:course/:section/assignments"
+					exact
+					render={() => (isAuth ? <FacultyAssignments /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/faculty/:course/:section/grades"
+					exact
+					render={() => (isAuth ? <FacultyGrades /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/faculty/:course/:section/forum"
+					exact
+					render={() => (isAuth ? <FacultyForum /> : <Redirect to="/" />)}
+				/>
 
 				{/* remember to do auth checking for these routes. */}
 			</Switch>

@@ -27,7 +27,7 @@ const Faculty = function({ email }) {
 		<div className="faculty">
 			<div className="faculty__wrapper">
 				{isFaculty ? (
-					<div>
+					<div className="faculty__inner__wrapper">
 						<p className="faculty__title">Hello {course.name}!</p>
 						<p className="faculty__title">Here Are Your Teaching Course Sections!</p>
 						<FacultyCard course={course} sectionNumber={1} />

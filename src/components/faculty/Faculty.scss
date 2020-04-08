@@ -18,6 +18,13 @@
 		align-items: center;
 		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
 
+		& .faculty__inner__wrapper {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+		}
+
 		& .faculty__error {
 			color: red;
 		}
