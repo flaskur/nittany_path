@@ -33,11 +33,15 @@ const App = function() {
 			<Navbar setEmail={setEmail} isAuth={isAuth} setIsAuth={setIsAuth} />
 
 			<Switch>
-				<Route path="/" exact component={Home} />
+				<Route path="/" exact render={() => <Home isAuth={isAuth} />} />
 
 				<Route path="/login" exact render={() => <Login setEmail={setEmail} setIsAuth={setIsAuth} />} />
 
-				<Route path="/profile" exact component={Profile} />
+				<Route
+					path="/profile"
+					exact
+					render={() => (isAuth ? <Profile email={email} /> : <Redirect to="/" />)}
+				/>
 
 				<Route
 					path="/courses"

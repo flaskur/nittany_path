@@ -2,7 +2,7 @@ import React from 'react';
 import './Home.scss';
 import { Link } from 'react-router-dom';
 
-const Home = function() {
+const Home = function({ isAuth }) {
 	return (
 		<div className="home">
 			<div className="home__header">
@@ -12,10 +12,11 @@ const Home = function() {
 					requests daily! Please start by logging in.
 				</p>
 
-				{/* Button should be conditionally rendered, based on login state. */}
-				<Link to="/courses" className="home__header--link">
-					View Courses
-				</Link>
+				{!isAuth && (
+					<Link to="/login" className="home__header--link">
+						Login!
+					</Link>
+				)}
 			</div>
 
 			<div className="home__main">
