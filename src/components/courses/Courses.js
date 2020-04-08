@@ -4,13 +4,13 @@ import CourseCard from '../coursecard/CourseCard';
 
 const Courses = function({ email }) {
 	const [ courses, setCourses ] = React.useState([]);
-	const [ isStudent, setIsStudent ] = React.useState(false); // actually its either you have no courses or you're a professor.
+	const [ isStudent, setIsStudent ] = React.useState(false);
 
 	React.useEffect(
 		() => {
 			fetch('http://localhost:3001/courses', {
 				headers: {
-					authorization: localStorage.getItem('token')
+					authorization: localStorage.getItem('token') // this has the email
 				}
 			})
 				.then((response) => response.json())
@@ -31,9 +31,8 @@ const Courses = function({ email }) {
 
 	return (
 		<div className="courses">
-			<p className="courses__title">Your Current Enrolled Courses!</p>
-
 			<div className="courses__wrapper">
+				{isStudent && <p className="courses__title">Your Current Enrolled Courses!</p>}
 				{isStudent ? (
 					courses.map((course) => {
 						return <CourseCard key={course.course_id} course={course} />;
@@ -42,7 +41,6 @@ const Courses = function({ email }) {
 					<p className="courses__error">You Do Not Have Enrolled Courses</p>
 				)}
 			</div>
-			<h2>{email}</h2>
 		</div>
 	);
 };

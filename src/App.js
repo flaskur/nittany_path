@@ -5,6 +5,8 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Assignments from './components/assignments/Assignments';
 import Course from './components/course/Course';
 import Courses from './components/courses/Courses';
+import Faculty from './components/faculty/Faculty';
+import FacultyCourse from './components/facultycourse/FacultyCourse';
 import Forum from './components/forum/Forum';
 import Grades from './components/grades/Grades';
 import Home from './components/home/Home';
@@ -43,6 +45,12 @@ const App = function() {
 					render={() => (isAuth ? <Courses email={email} /> : <Redirect to="/" />)}
 				/>
 
+				<Route
+					path="/faculty"
+					exact
+					render={() => (isAuth ? <Faculty email={email} /> : <Redirect to="/" />)}
+				/>
+
 				<Route path="/courses/:course/:section" exact render={() => <Course />} />
 
 				<Route path="/courses/:course/:section/forum" exact component={Forum} />
@@ -50,6 +58,10 @@ const App = function() {
 				<Route path="/courses/:course/:section/assignments" exact component={Assignments} />
 
 				<Route path="/courses/:course/:section/grades" exact component={Grades} />
+
+				<Route path="/faculty/:course/:section" exact render={() => <FacultyCourse />} />
+
+				{/* remember to do auth checking for these routes. */}
 			</Switch>
 
 			{/* inline elements have no padding, etc. */}

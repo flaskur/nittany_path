@@ -61,8 +61,10 @@ const Login = function({ setEmail, setIsAuth }) {
 	return (
 		<div className="login">
 			<p>Dummy Login</p>
-			<p>email: ae4536@nittany.edu</p>
-			<p>password: mxdgxmjn</p>
+			<p>student email: ae4536@nittany.edu</p>
+			<p>student password: mxdgxmjn</p>
+			<p>faculty email: wp45@nittany.edu</p>
+			<p>faculty password: jqy2dgis</p>
 
 			<h2>{errorMessage}</h2>
 

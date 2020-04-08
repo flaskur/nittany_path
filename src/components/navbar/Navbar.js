@@ -28,6 +28,14 @@ const Navbar = function({ setEmail, isAuth, setIsAuth }) {
 					Courses
 				</Link>
 
+				<Link to="/faculty" className="navbar__right--link">
+					Faculty
+				</Link>
+
+				<Link to="/profile" className="navbar__right--link">
+					Profile
+				</Link>
+
 				{isAuth ? (
 					<button className="navbar__right--button" onClick={handleLogoutClick}>
 						Logout
@@ -37,10 +45,6 @@ const Navbar = function({ setEmail, isAuth, setIsAuth }) {
 						Login
 					</Link>
 				)}
-
-				<Link to="/register" className="navbar__right--link">
-					Register
-				</Link>
 			</div>
 		</div>
 	);

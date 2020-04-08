@@ -1,0 +1,45 @@
+.facultycard {
+	background-color: peachpuff;
+	color: black;
+	height: 150px;
+	width: 700px;
+	margin-bottom: 20px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+
+	& .facultycard__title {
+		font-size: 36px;
+	}
+
+	& .facultycard__left {
+		background-color: paleturquoise;
+		padding: 10px;
+		border-radius: 5px;
+	}
+
+	& .facultycard__link {
+		display: inline-block;
+		background-color: lightgreen;
+		border: none;
+		text-decoration: none;
+		color: white;
+		font-weight: 700;
+		height: 80px;
+		width: 120px;
+		padding: 5px;
+		font-size: 20px;
+		border-radius: 5px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
+	}
+}
