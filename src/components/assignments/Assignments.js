@@ -38,32 +38,37 @@ const Assignments = function() {
 
 	return (
 		<div className="assignments">
-			<h2>assignments page</h2>
-			<h3>
-				Course: {course} Section: {section}
-			</h3>
-			<h2>Homeworks</h2>
-			{homeworks.map((homework) => {
-				return (
-					<div>
-						<p>{homework.course_id}</p>
-						<p>Section: {homework.sec_no}</p>
-						<p>Homework Number: {homework.hw_no}</p>
-						<p>Details: {homework.hw_details}</p>
-					</div>
-				);
-			})}
-			<h2>Exams</h2>
-			{exams.map((exam) => {
-				return (
-					<div>
-						<p>{exam.course_id}</p>
-						<p>Section: {exam.sec_no}</p>
-						<p>Exam Number: {exam.exam_no}</p>
-						<p>Details: {exam.exam_details}</p>
-					</div>
-				);
-			})}
+			<p className="assignments__title">
+				Assignments: {course} Section {section}
+			</p>
+
+			<div className="assignments__wrapper">
+				<div className="assignments__homeworks__wrapper">
+					<p className="assignments__homeworks__title">Homeworks</p>
+					{homeworks.map((homework) => {
+						return (
+							<div>
+								<p className="assignments__homeworks__entry">
+									HW NO. {homework.hw_no}: {homework.hw_details}
+								</p>
+							</div>
+						);
+					})}
+				</div>
+
+				<div className="assignments__exams__wrapper">
+					<p className="assignments__exams__title">Exams</p>
+					{exams.map((exam) => {
+						return (
+							<div>
+								<p className="assignments__exams__entry">
+									EXAM NO. {exam.exam_no}: {exam.exam_details}
+								</p>
+							</div>
+						);
+					})}
+				</div>
+			</div>
 		</div>
 	);
 };
