@@ -1,6 +1,189 @@
-.facultyassignments__radio__wrapper {
+.facultyassignments {
+	margin: 50px 0;
+	border: 2px solid black;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+
+	& .facultyassignments__title {
+		font-size: 36px;
+		font-weight: 500;
+		margin-top: 20px;
+		background-color: black;
+		border-radius: 5px;
+		padding: 5px;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	& .facultyassignments__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-bottom: 20px;
+
+		& .facultyassignments__radio__wrapper {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 10px;
+			width: 300px;
+			margin-top: 20px;
+
+			& .facultyassignments__radio {
+				margin-right: 10px;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			& .facultyassignments__label {
+				font-size: 20px;
+				font-weight: 500;
+				text-decoration: underline;
+			}
+		}
+
+		& .facultyassignments__input__wrapper {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			padding: 10px;
+
+			& .facultyassignments__input {
+				border: none;
+				border-radius: 5px;
+				background: white;
+				min-width: 500px;
+				height: 30px;
+				padding: 10px;
+				margin-right: 20px;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+			}
+
+			& .facultyassignments__button {
+				padding: 10px;
+				background-color: lightgreen;
+				border: none;
+				border-radius: 5px;
+				color: white;
+				font-size: 22px;
+				text-decoration: none;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	& .facultyassignments__wrapper {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: flex-start;
+		background-color: white;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+		color: black;
+		font-size: 24px;
+		border-radius: 10px;
+		padding: 30px;
+		margin-bottom: 50px;
+		max-width: 900px;
+
+		& .facultyassignments__homeworks__wrapper {
+			background-color: peachpuff;
+			height: 100%;
+			border: 2px solid black;
+			border-radius: 10px;
+			padding: 10px;
+			margin-right: 10px;
+			text-align: left;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+
+			& .facultyassignments__homeworks__title {
+				text-align: center;
+				font-size: 30px;
+				border-radius: 10px;
+				padding: 10px;
+				width: 200px;
+				text-decoration: underline;
+				font-weight: 600;
+			}
+
+			& .facultyassignments__homeworks__entry {
+				margin: 10px;
+			}
+
+			& .facultyassignments__link {
+				padding: 10px;
+				background-color: lightgreen;
+				border: none;
+				border-radius: 5px;
+				color: white;
+				font-size: 22px;
+				text-decoration: none;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+				margin-bottom: 50px;
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+
+		& .facultyassignments__exams__wrapper {
+			background-color: paleturquoise;
+			height: 100%;
+			border: 2px solid black;
+			border-radius: 10px;
+			padding: 10px;
+			margin-left: 10px;
+			text-align: left;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+
+			& .facultyassignments__exams__title {
+				text-align: center;
+				font-size: 30px;
+				border-radius: 10px;
+				padding: 10px;
+				width: 200px;
+				text-decoration: underline;
+				font-weight: 600;
+			}
+
+			& .facultyassignments__exams__entry {
+				margin: 10px;
+			}
+
+			& .facultyassignments__link {
+				padding: 10px;
+				background-color: lightgreen;
+				border: none;
+				border-radius: 5px;
+				color: white;
+				font-size: 22px;
+				text-decoration: none;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+				margin-bottom: 50px;
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+	}
 }

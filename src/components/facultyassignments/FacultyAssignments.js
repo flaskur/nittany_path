@@ -1,6 +1,6 @@
 import React from 'react';
 import './FacultyAssignments.scss';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const FacultyAssignments = function() {
 	const [ homeworks, setHomeworks ] = React.useState([]);
@@ -20,7 +20,7 @@ const FacultyAssignments = function() {
 				.then((data) => setHomeworks(data))
 				.catch((error) => console.log(error));
 		},
-		[ homeworks, course, section ]
+		[ course, section ]
 	);
 	React.useEffect(
 		() => {
@@ -33,7 +33,7 @@ const FacultyAssignments = function() {
 				.then((data) => setExams(data))
 				.catch((error) => console.log(error));
 		},
-		[ exams, course, section ]
+		[ course, section ]
 	);
 
 	const handleFormSubmit = function(event) {
@@ -101,55 +101,80 @@ const FacultyAssignments = function() {
 
 	return (
 		<div className="facultyassignments">
-			<h2>
-				This is faculty assignments meant to be a todolist that adds to assignments database based on course and
-				section
-			</h2>
+			<p className="facultyassignments__title">Create Assignments</p>
 			<form className="facultyassignments__form" onSubmit={handleFormSubmit}>
 				<div className="facultyassignments__radio__wrapper">
 					<div>
-						<input type="radio" name="assignment_radio" value="homework" defaultChecked />
-						<label>Homework</label>
+						<input
+							className="facultyassignments__radio"
+							type="radio"
+							name="assignment_radio"
+							value="homework"
+							defaultChecked
+						/>
+						<label className="facultyassignments__label">Homework</label>
 					</div>
 					<div>
-						<input type="radio" name="assignment_radio" value="exam" />
-						<label>Exam</label>
+						<input
+							className="facultyassignments__radio"
+							type="radio"
+							name="assignment_radio"
+							value="exam"
+						/>
+						<label className="facultyassignments__label">Exam</label>
 					</div>
 				</div>
-				<input
-					className="facultyassignments__input"
-					type="text"
-					name="assignment_input"
-					value={inputText}
-					onChange={handleInputChange}
-				/>
-				<button type="submit">Submit</button>
+				<div className="facultyassignments__input__wrapper">
+					<input
+						className="facultyassignments__input"
+						type="text"
+						name="assignment_input"
+						value={inputText}
+						onChange={handleInputChange}
+					/>
+					<button className="facultyassignments__button" type="submit">
+						Submit
+					</button>
+				</div>
 			</form>
 
-			<div className="facultyassignments__homeworks">
-				{homeworks.map((homework) => {
-					return (
-						<div key={homework.hw_no}>
-							<p>{homework.course_id}</p>
-							<p>{homework.sec_no}</p>
-							<p>{homework.hw_no}</p>
-							<p>{homework.hw_details}</p>
-						</div>
-					);
-				})}
-			</div>
+			<div className="facultyassignments__wrapper">
+				<div className="facultyassignments__homeworks__wrapper">
+					{homeworks.map((homework) => {
+						return (
+							<div key={homework.hw_no}>
+								<p className="facultyassignments__homeworks__entry">
+									HW NO. {homework.hw_no}: {homework.hw_details}
+								</p>
+								{/* You need an identifier to make sure that it's a homework or exam type. You can pass as param again. */}
+								<Link
+									className="facultyassignments__link"
+									to={`/faculty/${course}/${section}/grades/homework/${homework.hw_no}`}
+								>
+									Grade >>
+								</Link>
+							</div>
+						);
+					})}
+				</div>
 
-			<div className="facultyassignments__exams">
-				{exams.map((exam) => {
-					return (
-						<div key={exam.exam_no}>
-							<p>{exam.course_id}</p>
-							<p>{exam.sec_no}</p>
-							<p>{exam.exam_no}</p>
-							<p>{exam.exam_details}</p>
-						</div>
-					);
-				})}
+				<div className="facultyassignments__exams__wrapper">
+					{exams.map((exam) => {
+						return (
+							<div key={exam.exam_no}>
+								<p className="facultyassignments__exams__entry">
+									EXAM NO. {exam.exam_no}: {exam.exam_details}
+								</p>
+								<Link
+									className="facultyassignments__link"
+									to={`/faculty/${course}/${section}/grades/exam/${exam.exam_no}`}
+								>
+									Grade >>
+								</Link>
+							</div>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);

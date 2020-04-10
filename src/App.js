@@ -88,7 +88,7 @@ const App = function() {
 					render={() => (isAuth ? <FacultyAssignments /> : <Redirect to="/" />)}
 				/>
 				<Route
-					path="/faculty/:course/:section/grades"
+					path="/faculty/:course/:section/grades/:type/:number"
 					exact
 					render={() => (isAuth ? <FacultyGrades /> : <Redirect to="/" />)}
 				/>
