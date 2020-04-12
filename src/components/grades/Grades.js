@@ -48,7 +48,7 @@ const Grades = function() {
 
 					{homeworkGrades.map((homeworkGrade) => {
 						return (
-							<div>
+							<div key={homeworkGrade.hw_no}>
 								<p className="grades__homeworks__entry">
 									HW NO. {homeworkGrade.hw_no} GRADE: {homeworkGrade.grade}
 								</p>
@@ -62,7 +62,7 @@ const Grades = function() {
 
 					{examGrades.map((examGrade) => {
 						return (
-							<div>
+							<div key={examGrade.exam_no}>
 								<p className="grades__exams__entry">
 									EXAM NO. {examGrade.exam_no} GRADE: {examGrade.grade}
 								</p>

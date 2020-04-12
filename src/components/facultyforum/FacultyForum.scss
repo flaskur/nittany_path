@@ -1,0 +1,97 @@
+.facultyforum {
+	margin: 50px 0;
+	border: 2px solid black;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	& .facultyforum__title {
+		font-size: 36px;
+		font-weight: 500;
+		margin: 20px 0;
+		background-color: black;
+		border-radius: 5px;
+		padding: 5px;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	& .facultyforum__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		margin-bottom: 20px;
+
+		& .facultyforum__input__wrapper {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px;
+
+			& .facultyforum__input {
+				font-size: 20px;
+				border: none;
+				border-radius: 5px;
+				background: white;
+				min-width: 500px;
+				height: 40px;
+				padding: 10px;
+				margin-right: 20px;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+			}
+
+			& .facultyforum__button {
+				padding: 10px;
+				background-color: lightgreen;
+				border: none;
+				border-radius: 5px;
+				color: white;
+				font-size: 22px;
+				text-decoration: none;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	& .facultyforum__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		background-color: white;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+		color: black;
+		font-size: 24px;
+		border-radius: 10px;
+		padding: 30px;
+		margin-bottom: 50px;
+		width: 700px;
+
+		& .facultyforum__post {
+			display: flex;
+			justify-content: space-between;
+			align-items: stretch;
+			padding: 10px;
+			margin: 10px;
+			width: 100%;
+			border: 2px solid black;
+
+			& .facultyforum__post--email {
+				background-color: plum;
+				border-right: 5px dashed black;
+				height: 100%;
+			}
+
+			& .facultyforum__post--postinfo {
+				background-color: powderblue;
+				height: 100%;
+			}
+		}
+	}
+}

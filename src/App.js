@@ -57,11 +57,6 @@ const App = function() {
 					render={() => (isAuth ? <Course /> : <Redirect to="/" />)}
 				/>
 				<Route
-					path="/courses/:course/:section/forum"
-					exact
-					render={() => (isAuth ? <Forum /> : <Redirect to="/" />)}
-				/>
-				<Route
 					path="/courses/:course/:section/assignments"
 					exact
 					render={() => (isAuth ? <Assignments /> : <Redirect to="/" />)}
@@ -70,6 +65,11 @@ const App = function() {
 					path="/courses/:course/:section/grades"
 					exact
 					render={() => (isAuth ? <Grades /> : <Redirect to="/" />)}
+				/>
+				<Route
+					path="/courses/:course/:section/forum"
+					exact
+					render={() => (isAuth ? <Forum /> : <Redirect to="/" />)}
 				/>
 
 				<Route

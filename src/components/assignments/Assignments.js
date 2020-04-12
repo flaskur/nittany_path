@@ -47,7 +47,7 @@ const Assignments = function() {
 					<p className="assignments__homeworks__title">Homeworks</p>
 					{homeworks.map((homework) => {
 						return (
-							<div>
+							<div key={homework.hw_no}>
 								<p className="assignments__homeworks__entry">
 									HW NO. {homework.hw_no}: {homework.hw_details}
 								</p>
@@ -60,7 +60,7 @@ const Assignments = function() {
 					<p className="assignments__exams__title">Exams</p>
 					{exams.map((exam) => {
 						return (
-							<div>
+							<div key={exam.exam_no}>
 								<p className="assignments__exams__entry">
 									EXAM NO. {exam.exam_no}: {exam.exam_details}
 								</p>
