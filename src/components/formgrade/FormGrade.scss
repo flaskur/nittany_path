@@ -1,0 +1,37 @@
+.formgrade {
+	margin-right: 100px;
+	margin-left: -50px;
+
+	& .formgrade__form {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		& .formgrade__input {
+			border: 2px solid lightblue;
+			border-radius: 5px;
+			background: white;
+			width: 100px;
+			height: 30px;
+			padding: 10px;
+			margin-right: 20px;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+		}
+
+		& .formgrade__button {
+			padding: 5px;
+			background-color: lightgreen;
+			border: none;
+			border-radius: 5px;
+			color: white;
+			font-size: 16px;
+			text-decoration: none;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+
+			&:hover {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+	}
+}

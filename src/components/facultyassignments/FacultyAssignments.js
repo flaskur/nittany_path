@@ -142,7 +142,7 @@ const FacultyAssignments = function() {
 				<div className="facultyassignments__homeworks__wrapper">
 					{homeworks.map((homework) => {
 						return (
-							<div key={homework.hw_no}>
+							<div className="facultyassignments__homeworks__wrapper__inner" key={homework.hw_no}>
 								<p className="facultyassignments__homeworks__entry">
 									HW NO. {homework.hw_no}: {homework.hw_details}
 								</p>
@@ -161,7 +161,7 @@ const FacultyAssignments = function() {
 				<div className="facultyassignments__exams__wrapper">
 					{exams.map((exam) => {
 						return (
-							<div key={exam.exam_no}>
+							<div className="facultyassignments__exams__wrapper__inner" key={exam.exam_no}>
 								<p className="facultyassignments__exams__entry">
 									EXAM NO. {exam.exam_no}: {exam.exam_details}
 								</p>

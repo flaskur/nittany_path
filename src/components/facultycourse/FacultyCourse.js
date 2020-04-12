@@ -13,9 +13,6 @@ const FacultyCourse = function() {
 				<Link className="facultycourse__link" to={`/faculty/${course}/${section}/assignments`}>
 					<p>Create Assignments</p>
 				</Link>
-				<Link className="facultycourse__link" to={`/faculty/${course}/${section}/grades`}>
-					<p>Add Grades</p>
-				</Link>
 				<Link className="facultycourse__link" to={`/faculty/${course}/${section}/forum`}>
 					<p>Forum</p>
 				</Link>

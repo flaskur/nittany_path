@@ -1,12 +1,13 @@
 import React from 'react';
 import './FormGrade.scss';
 
-const FormGrade = function({ grade, changeGrade }) {
+const FormGrade = function({ changeGrade, email }) {
 	const [ inputGrade, setInputGrade ] = React.useState('');
 
 	const handleFormSubmit = function(event) {
 		event.preventDefault();
-		changeGrade(inputGrade);
+		changeGrade(inputGrade, email);
+		setInputGrade('');
 	};
 
 	return (
@@ -15,17 +16,16 @@ const FormGrade = function({ grade, changeGrade }) {
 				<input
 					className="formgrade__input"
 					type="number"
-					min="0"
-					max="100"
+					min="0.0"
+					max="100.0"
 					name="grade"
 					value={inputGrade}
 					onChange={(event) => setInputGrade(event.target.value)}
 				/>
 				<button className="formgrade__button" type="submit">
-					Submit Grade
+					Submit
 				</button>
 			</form>
-			<p>Real Grade is {grade.grade}</p>
 		</div>
 	);
 };

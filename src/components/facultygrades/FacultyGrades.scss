@@ -1,0 +1,70 @@
+.facultygrades {
+	margin: 50px 0;
+	border: 2px solid black;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+
+	& .facultygrades__title {
+		font-size: 36px;
+		font-weight: 500;
+		margin-top: 20px;
+		background-color: black;
+		border-radius: 5px;
+		padding: 5px;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+		width: 600px;
+	}
+
+	& .facultygrades__wrapper {
+		background-color: white;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+		color: black;
+		font-size: 24px;
+		border-radius: 10px;
+		padding: 30px;
+		margin: 50px;
+
+		& .facultygrades__table {
+			border: 2px solid black;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+
+			& .facultygrades__table__head {
+				& .facultygrades__table__head--row {
+					display: flex;
+					justify-content: space-evenly;
+					align-items: center;
+					font-size: 28px;
+
+					& .facultygrades__table__head--header {
+						text-decoration: underline;
+						padding: 20px;
+					}
+				}
+			}
+		}
+
+		& .facultygrades__table__body {
+			& .facultygrades__table__row {
+				display: flex;
+				justify-content: space-evenly;
+				align-items: center;
+				border-top: 1px solid black;
+				border-bottom: 1px solid black;
+				width: 100%;
+				margin: 10px 0;
+				font-size: 20px;
+
+				& .facultygrades__table__row--entry {
+					padding: 10px 20px;
+					margin-right: 80px;
+				}
+			}
+		}
+	}
+}
