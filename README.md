@@ -1,4 +1,11 @@
 ## nittany path
-### This is an application that is used to model a school course manager for students, teachers, faculty, and administrators. 
+### This is an application that is used to model a school course manager for students and faculty. Complete with multiple features like viewing courses, creating assignments, scoring grades, dropping courses, proper authentication, etc. 
 
-A school course manager is used for many schools in order to keep up communications between students and teachers. It is used to publish certain courses and have a record of grades of certain assignments. I plan on making this application extensive to expected functionality of a course manager. This also has a large focus on database design.
+This project is built using the React Library. It composes multiple components and renders pages based on the url path dictated by react-router-dom. 
+
+Most of the logic is self explanatory, mainly just a lot of fetch requests to the backend to access the mySQL database information.
+
+A hefty amount of time was also spent on styling this web application to look good, which is done through pure CSS instead of using 3rd party CSS framework.
+
+Click Below To View Backend Source Code
+[API SOURCE CODE](https://github.com/flaskur/nittany_path_api)
