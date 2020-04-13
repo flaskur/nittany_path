@@ -7,5 +7,4 @@ Most of the logic is self explanatory, mainly just a lot of fetch requests to th
 
 A hefty amount of time was also spent on styling this web application to look good, which is done through pure CSS instead of using 3rd party CSS framework.
 
-Click Below To View Backend Source Code
-[API SOURCE CODE](https://github.com/flaskur/nittany_path_api)
+Click [API SOURCE CODE](https://github.com/flaskur/nittany_path_api) To View Backend Source Code
