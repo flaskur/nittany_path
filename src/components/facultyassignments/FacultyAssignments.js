@@ -36,6 +36,7 @@ const FacultyAssignments = function() {
 		[ course, section ]
 	);
 
+	// ADD GRADE ENTRY INTO DATABASE FOR ALL STUDENTS WITH DEFAULT 0 GRADE ON NEW ASSIGNMENT.
 	const handleFormSubmit = function(event) {
 		event.preventDefault();
 
@@ -62,7 +63,18 @@ const FacultyAssignments = function() {
 						})
 					})
 						.then((response) => response.json)
-						.then((data) => console.log('message', data.message))
+						.then((data) => {
+							console.log('message', data.message);
+
+							fetch(`http://localhost:3001/faculty/${course}/${section}/assignments/homeworks`, {
+								headers: {
+									authorization: localStorage.getItem('token')
+								}
+							})
+								.then((response) => response.json())
+								.then((data) => setHomeworks(data))
+								.catch((error) => console.log(error));
+						})
 						.catch((error) => console.log(error));
 				})
 				.catch((error) => console.log(error));
@@ -86,7 +98,18 @@ const FacultyAssignments = function() {
 						})
 					})
 						.then((response) => response.json())
-						.then((data) => console.log(data.message))
+						.then((data) => {
+							console.log(data.message);
+
+							fetch(`http://localhost:3001/faculty/${course}/${section}/assignments/exams`, {
+								headers: {
+									authorization: localStorage.getItem('token')
+								}
+							})
+								.then((response) => response.json())
+								.then((data) => setExams(data))
+								.catch((error) => console.log(error));
+						})
 						.catch((error) => console.log(error));
 				})
 				.catch((error) => console.log(error));
@@ -131,6 +154,7 @@ const FacultyAssignments = function() {
 						name="assignment_input"
 						value={inputText}
 						onChange={handleInputChange}
+						required
 					/>
 					<button className="facultyassignments__button" type="submit">
 						Submit

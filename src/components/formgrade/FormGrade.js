@@ -21,6 +21,7 @@ const FormGrade = function({ changeGrade, email }) {
 					name="grade"
 					value={inputGrade}
 					onChange={(event) => setInputGrade(event.target.value)}
+					required
 				/>
 				<button className="formgrade__button" type="submit">
 					Submit

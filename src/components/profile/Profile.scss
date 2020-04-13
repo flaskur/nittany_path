@@ -1,7 +1,8 @@
 .profile {
 	border: 2px solid black;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 
 	& .profile__wrapper {
@@ -32,6 +33,86 @@
 			padding: 10px;
 			margin: 5px 0;
 			color: black;
+		}
+	}
+
+	& .profile__error__message {
+		color: red;
+		font-size: 32px;
+	}
+
+	& .profile__reset {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		padding: 20px;
+		background-color: white;
+		border-radius: 10px;
+		box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+		margin: 50px 0;
+		color: black;
+
+		& .profile__reset__title {
+			font-size: 30px;
+			font-weight: 500;
+			margin: 20px 0;
+			background-color: black;
+			border-radius: 5px;
+			padding: 10px;
+			box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.2);
+			color: red;
+		}
+
+		& .profile__form {
+			border: 2px solid black;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px;
+
+			& .profile__input__wrapper {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				padding: 10px;
+				border: 1px solid black;
+				width: 100%;
+				font-size: 18px;
+
+				& .profile__input__label {
+					background-color: palegoldenrod;
+					padding: 5px;
+					margin-right: 10px;
+				}
+
+				& .profile__input {
+					border: 2px solid paleturquoise;
+					border-radius: 5px;
+					height: 30px;
+					font-size: 16px;
+					padding: 10px;
+				}
+			}
+
+			& .profile__button {
+				padding: 10px;
+				background-color: black;
+				border: none;
+				border-radius: 5px;
+				color: red;
+				font-size: 22px;
+				text-decoration: none;
+				box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, .2);
+				margin-top: 20px;
+				width: 150px;
+
+				&:hover {
+					text-decoration: underline;
+					cursor: pointer;
+				}
+			}
 		}
 	}
 }
