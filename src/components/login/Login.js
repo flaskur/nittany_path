@@ -38,7 +38,6 @@ const Login = function({ setEmail, setIsAuth }) {
 			localStorage.setItem('email', data.email);
 			localStorage.setItem('token', data.token);
 
-			// fix the state in the parent app component
 			setEmail(localStorage.getItem('email'));
 			setIsAuth(true);
 		} catch (error) {

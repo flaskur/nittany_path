@@ -20,7 +20,7 @@ const Home = function({ isAuth }) {
 			</div>
 
 			<div className="home__main">
-				<p>main</p>
+				<div className="something" />
 			</div>
 
 			<div className="home__footer">

@@ -19,7 +19,7 @@ import Profile from './components/profile/Profile';
 
 const App = function() {
 	const [ email, setEmail ] = React.useState('');
-	const [ isAuth, setIsAuth ] = React.useState(false); // should be used to protect the routes as front end auth. Technically not needed.
+	const [ isAuth, setIsAuth ] = React.useState(false);
 
 	React.useEffect(() => {
 		const localToken = localStorage.getItem('token');
@@ -97,15 +97,7 @@ const App = function() {
 					exact
 					render={() => (isAuth ? <FacultyForum /> : <Redirect to="/" />)}
 				/>
-
-				{/* remember to do auth checking for these routes. */}
 			</Switch>
-
-			{/* inline elements have no padding, etc. */}
-			<h3>{'email' + email}</h3>
-			<h3>{'local email' + localStorage.getItem('email')}</h3>
-			<h3>{'auth?' + isAuth.toString()}</h3>
-			<h3>{'local token' + localStorage.getItem('token')}</h3>
 		</div>
 	);
 };

@@ -53,8 +53,6 @@ const Profile = function({ email }) {
 		let newValue = newRef.current.value;
 		let confirmValue = confirmRef.current.value;
 
-		// I would need to actually check the backend for current password compare. I can do the new and confirm password check in the front end though. This is a post request and you attach to the body. I need to differentiate between faculty and student, which isStudent does.
-
 		if (newValue === confirmValue) {
 			fetch(`http://localhost:3001/profile`, {
 				headers: {

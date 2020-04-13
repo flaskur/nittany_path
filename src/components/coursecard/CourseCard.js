@@ -3,7 +3,6 @@ import './CourseCard.scss';
 import { Link } from 'react-router-dom';
 
 const CourseCard = function({ course }) {
-	// destructure all the course information b/c it's an object
 	const {
 		course_id: courseId,
 		sec_no: sectionNumber,
