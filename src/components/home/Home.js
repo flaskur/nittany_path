@@ -1,6 +1,9 @@
 import React from 'react';
 import './Home.scss';
 import { Link } from 'react-router-dom';
+import HomeCard from '../homecard/HomeCard';
+import { FaSchool, FaPencilAlt } from 'react-icons/fa';
+import { MdSchool, MdNotifications } from 'react-icons/md';
 
 const Home = function({ isAuth }) {
 	return (
@@ -20,7 +23,22 @@ const Home = function({ isAuth }) {
 			</div>
 
 			<div className="home__main">
-				<div className="something" />
+				<HomeCard
+					icon={<FaSchool />}
+					description={'Readily access your course information with a click of a button!'}
+				/>
+				<HomeCard
+					icon={<MdSchool />}
+					description={'Gain insights by communicating directly with your class!'}
+				/>
+				<HomeCard
+					icon={<FaPencilAlt />}
+					description={'Access and manage all your course homework and exam grades!'}
+				/>
+				<HomeCard
+					icon={<MdNotifications />}
+					description={'Easily connect and contribute to an educational environment!'}
+				/>
 			</div>
 
 			<div className="home__footer">
