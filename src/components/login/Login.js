@@ -83,6 +83,7 @@ const Login = function({ setEmail, setIsAuth }) {
 							value={emailInput}
 							placeholder="email"
 							onChange={handleInputChange}
+							required
 						/>
 					</div>
 					<div className="login__password">
@@ -94,6 +95,7 @@ const Login = function({ setEmail, setIsAuth }) {
 							value={passwordInput}
 							placeholder="password"
 							onChange={handleInputChange}
+							required
 						/>
 					</div>
 

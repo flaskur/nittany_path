@@ -67,6 +67,7 @@ const Forum = function() {
 						name="post"
 						value={inputText}
 						onChange={(event) => setInputText(event.target.value)}
+						required
 					/>
 					<button className="forum__button" type="submit">
 						Add Post
